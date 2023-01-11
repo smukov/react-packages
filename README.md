@@ -38,3 +38,17 @@ Created with the following guide: https://dev.to/nicolaserny/create-a-react-comp
 To build package run `cd packages/ms-react-components` and then `npm run build`
 
 To build the test site `cd sites/test-site` and then `npm run dev`
+
+## Publishing new version
+
+To publish the package, execute the following steps
+
+1. first update the package version in `packages/ms-react-components/package.json`
+
+```bash
+cd packages/ms-react-components/
+npm run build
+npm run prepack
+npm login
+npm publish
+```
