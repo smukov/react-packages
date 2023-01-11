@@ -1,0 +1,34 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+/* TODO not sure if these classes should be prefixed in some way to avoid collisions? 
+
+  figure how to compile this with "--css-modules false" removed from scritps, or how to prefix the whole library?
+*/
+
+@layer components {
+  .btn {
+    @apply w-full px-3 py-1 border rounded-md shadow-sm sm:max-w-min focus:outline-none disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  .btn-success {
+    @apply text-white bg-green-500 hover:bg-green-700 disabled:bg-green-500;
+  }
+
+  .btn-error {
+    @apply text-white bg-red-500 hover:bg-red-700 disabled:bg-red-500;
+  }
+
+  .btn-warning {
+    @apply text-white bg-yellow-600 hover:bg-yellow-700 disabled:bg-yellow-600;
+  }
+
+  .btn-light {
+    @apply text-gray-700 bg-white border-gray-300 hover:bg-gray-50;
+  }
+
+  .btn-soft {
+    @apply opacity-90 btn-light;
+  }
+}

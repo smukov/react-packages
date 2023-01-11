@@ -1,0 +1,206 @@
+.fileUpload {
+  @apply flex flex-col flex-grow;
+}
+
+.fileUpload .buttons {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  @apply flex flex-col flex-grow;
+}
+
+.fileUpload .button {
+  margin: 0 10vw;
+}
+
+.fileUpload .images {
+  display: flex;
+  justify-content: center;
+}
+
+.fileUpload .delete {
+  position: relative;
+  top: 16px;
+  right: 15px;
+  width: 32px;
+}
+
+.fileUpload footer svg,
+.fileUpload .button svg,
+.fileUpload .delete svg {
+  filter: drop-shadow(3px 3px 3px #999);
+  transition: 0.3s;
+  transform: rotate(-0.2deg);
+}
+
+.fileUpload footer svg:hover,
+.fileUpload .button svg:hover,
+.fileUpload .delete svg:hover {
+  filter: drop-shadow(4px 4px 4px #999);
+  transform: rotate(-0.6deg);
+  cursor: pointer;
+}
+
+.fileUpload .delete svg {
+  filter: drop-shadow(1px 1px 1px #999);
+}
+
+.fileUpload footer svg {
+  filter: drop-shadow(1.5px 1px 1px #999);
+}
+
+footer svg:hover,
+.delete svg:hover {
+  filter: drop-shadow(1.5px 1.5px 1.5px);
+}
+
+.fileUpload input[type="file"] {
+  visibility: hidden;
+  position: absolute;
+}
+
+.fileUpload img {
+  max-height: 420px;
+  max-width: 100%;
+  padding: 10px;
+  border: 1px dashed #999;
+}
+
+/* Loading */
+.fileUpload .loading-wrapper,
+.fileUpload .loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.fileUpload .loading {
+  width: 200px;
+  height: 200px;
+}
+
+.fileUpload .loading .background {
+  border-radius: 50%;
+  background: #6762a6;
+  border: 3px solid #c9c3e6;
+  box-shadow: 1px 2px 2px rgba(0, 0, 0, 0.25);
+  width: 200px;
+  height: 200px;
+  box-sizing: border-box;
+  animation: pulse-colors 2s infinite alternate linear;
+}
+
+.fileUpload .loading i {
+  margin: 25px 5px 5px 55px;
+  float: left;
+  font-size: 10em !important;
+  color: #fff;
+  animation: pulse-icon 4s infinite alternate linear;
+}
+
+.fileUpload #notification-wrapper {
+  position: absolute;
+}
+
+/* Footer */
+.fileUpload footer {
+  display: flex;
+  justify-content: space-between;
+  width: 96vw;
+  margin: 0 2vw;
+}
+
+.fileUpload footer .small-button {
+  border-radius: 50%;
+  border: 1px solid #fff;
+  width: 3.2em;
+  height: 3.2em;
+  padding: 5px;
+  transition: 0.3s;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  text-align: center;
+}
+
+.fileUpload footer .small-button:hover {
+  background: #767676;
+  box-shadow: 0px 6px 6px rgba(0, 0, 0, 0.45);
+}
+
+.fileUpload footer .small-button.github {
+  background: #6e5494;
+}
+
+.fileUpload footer .small-button.medium {
+  background: #00ab6c;
+  font-size: 0.85em;
+  padding: 0.65em;
+}
+
+@keyframes pulse-colors {
+  from {
+    background: #c9c3e6;
+    border: 3px solid #a29ccc;
+  }
+  to {
+    background: #6762a6;
+    border: 3px solid #c9c3e6;
+  }
+}
+
+/* Animations */
+.fileUpload .fadein {
+  animation: fadein 1s;
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.fileUpload .spinner {
+  animation: spin 1.2s infinite linear;
+}
+
+.fileUpload .spinner svg {
+  background: #f2f2f2;
+  border-radius: 50%;
+}
+
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+.fileUpload .rolling {
+  position: absolute;
+  animation: move 6s ease-out;
+  filter: drop-shadow(4px 4px 4px #999);
+}
+
+@-webkit-keyframes move {
+  0% {
+    left: -5%;
+  }
+  100% {
+    left: 105%;
+  }
+}
+
+@keyframes pulse-icon {
+  from {
+    text-shadow: 1px 2px 2px rgba(0, 0, 0, 0.25);
+  }
+  to {
+    text-shadow: 2px 4px 4px rgba(0, 0, 0, 0.55);
+  }
+}
