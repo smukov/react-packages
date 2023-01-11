@@ -1,6 +1,8 @@
 {
   "name": "ms-react-components",
   "version": "0.0.1",
+  "description": "Reusable React components",
+  "repository": "smukov/react-packages/packages/ms-react-components",
   "type": "module",
   "scripts": {
     "dev": "NODE_ENV=development vite",
